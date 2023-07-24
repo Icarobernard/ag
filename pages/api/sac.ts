@@ -5,7 +5,7 @@ type MonthData = {
   saldo: number;
   juros: number;
   amortizacao: number;
-  parcela: number;
+  prestacao: number;
 };
 
 export default function handler(
@@ -44,7 +44,7 @@ export default function handler(
       saldo: remainingPrincipal,
       juros: interest,
       amortizacao: monthlyAmortization,
-      parcela: monthlyPayment,
+      prestacao: monthlyPayment,
     });
   }
 
