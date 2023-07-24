@@ -1,11 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 type MonthData = {
-  month: number;
-  balance: number;
-  interest: number;
-  amortization: number;
-  payment: number;
+  mes: number;
+  saldo: number;
+  juros: number;
+  amortizacao: number;
+  parcela: number;
 };
 
 export default function handler(
@@ -40,11 +40,11 @@ export default function handler(
     remainingPrincipal -= monthlyAmortization;
 
     monthlyData.push({
-      month,
-      balance: remainingPrincipal,
-      interest,
-      amortization: monthlyAmortization,
-      payment: monthlyPayment,
+      mes: month,
+      saldo: remainingPrincipal,
+      juros: interest,
+      amortizacao: monthlyAmortization,
+      parcela: monthlyPayment,
     });
   }
 
