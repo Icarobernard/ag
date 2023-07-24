@@ -37,7 +37,12 @@ export default function handler(
   for (let month = 1; month <= n; month++) {
     const interest = remainingPrincipal * monthlyInterest;
     const monthlyPayment = monthlyAmortization + interest;
-    remainingPrincipal -= monthlyAmortization;
+    if (month != n) {
+      remainingPrincipal -= monthlyAmortization;
+    } else {
+      remainingPrincipal = 0;
+    }
+
 
     monthlyData.push({
       mes: month,
